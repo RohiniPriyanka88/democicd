@@ -35,7 +35,7 @@ jobs:
           script: |
             docker stop demoapp || true
             docker rm demoapp || true
-            docker pull ${{ secrets.DOCKER_USERNAME }}/webapp:${{ github.sha }}
+            docker pull ${{ secrets.DOCKER_USERNAME }}/demoapp:${{ github.sha }}
             docker run -d --name demoapp -p 80:80 ${{ secrets.DOCKER_USERNAME }}/demoapp:${{ github.sha }}
           
      
